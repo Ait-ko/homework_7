@@ -1,7 +1,10 @@
 public class Medic extends Hero{
 
-    public Medic(int hp, int damage, String superAbility) {
+    private int healPoints;
+
+    public Medic(int hp, int damage, String superAbility, int healPoints) {
         super(hp, damage, superAbility);
+        this.healPoints = healPoints;
     }
 
     @Override
@@ -17,5 +20,16 @@ public class Medic extends Hero{
     @Override
     public void damage() {
         System.out.println("Damage " + getDamage());
+    }
+
+    public int getHealPoints() {
+        return healPoints;
+    }
+
+    public void setHealPoints (int healPoints){
+        this.healPoints = healPoints;
+    }
+    public void increaseExperience() {
+        healPoints = (int) (healPoints * 1.1);
     }
 }
